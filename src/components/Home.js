@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import MovieList from './MovieList';
 
 export default function Home() {
-    const [trendings, setTrending] = useState([]);
+    const [movies, setTrending] = useState([]);
 
 
     async function getTrending() {
@@ -24,7 +24,7 @@ export default function Home() {
         <>
             
             {
-                (trendings.length > 0) && <MovieList trendings={trendings} />
+                (movies.length > 0) && <MovieList movies={movies} />
             }
 
 
