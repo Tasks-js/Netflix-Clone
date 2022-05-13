@@ -1,17 +1,16 @@
 import Movie from "./Movie"
 
-// import {Card , Button} from 'react-bootstrap'
 
 
-
-export default function Cards(props) {
+export default function MovieList(props) {
     return (
+        
         <>
             {
-                props.trendings.map((movie) => {
+             props.movies.map((moviee) => {
                     return (
                         <>
-                            <Movie movie={movie} />
+                            <Movie moviee={moviee} />
                         </>
                     )
                 }

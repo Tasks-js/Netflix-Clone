@@ -9,21 +9,21 @@ export default function Movie(props) {
     const [chosenMovie, setChosenMovies] = useState();
 
     const handleClose = () => setShow(false);
-    const handleShow = (movie) => {
-        setChosenMovies(movie);
+    const handleShow = (moviee) => {
+        setChosenMovies(moviee);
         setShow(true);
     }
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={props.movie.poster_path} />
+                <Card.Img variant="top" src={props.moviee.poster_path} />
                 <Card.Body>
-                    <Card.Title>{props.movie.title}</Card.Title>
+                    <Card.Title>{props.moviee.title}</Card.Title>
                     <Card.Text>
-                        {props.movie.overview}
+                        {props.moviee.overview}
                     </Card.Text>
                     <Card.Text>
-                        {props.movie.release_date} 
+                        {props.moviee.release_date} 
                     </Card.Text>
                     <Button varient="info" onClick={handleShow}>Add To The Favorite List</Button>
                     
