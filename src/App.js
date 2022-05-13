@@ -7,7 +7,7 @@ function App() {
   return (
     <>
 
-      <h1>Welcome to trending Web app</h1>
+      <h1>Netflix Clone</h1>
       
       <Routes>
         <Route path="/" element={<Home />} />
