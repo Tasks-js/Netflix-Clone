@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
+import React from 'react'
 import ModalMovie from "./ModalMovie";
 
 
@@ -9,14 +10,14 @@ export default function Movie(props) {
     const [chosenMovie, setChosenMovies] = useState();
 
     const handleClose = () => setShow(false);
-    const handleShow = (moviee) => {
-        setChosenMovies(moviee);
+    const handleShow = () => {
+        setChosenMovies(props.moviee);
         setShow(true);
     }
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={props.moviee.poster_path} />
+                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${props.moviee.poster_path}`} />
                 <Card.Body>
                     <Card.Title>{props.moviee.title}</Card.Title>
                     <Card.Text>
