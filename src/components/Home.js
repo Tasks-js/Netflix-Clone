@@ -14,6 +14,20 @@ export default function Home() {
         console.log("the trendings", trendingsData);
     }
 
+    function updateMovie(newMovie, id) {
+        let updatedMovies = movies.map((moviee) => {
+            if (moviee.id === id) {
+                moviee.personal_comment = newMovie.userComment;
+                return moviee;
+            } else {
+                return moviee;
+            }
+        })
+
+        setTrending(updatedMovies);
+
+    }
+
 
     useEffect(() => {
         getTrending();
@@ -24,7 +38,7 @@ export default function Home() {
         <>
             
             {
-                (movies.length > 0) && <MovieList movies={movies} />
+                (movies.length > 0) && <MovieList movies={movies} updateMovie={updateMovie}/>
             }
 
 
