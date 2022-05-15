@@ -26,12 +26,12 @@ export default function Movie(props) {
                     <Card.Text>
                         {props.moviee.release_date} 
                     </Card.Text>
-                    <Button varient="info" onClick={handleShow}>Add To The Favorite List</Button>
+                    <Button varient="info" onClick={() =>{handleShow(props.moviee)}}>Add To The Favorite List</Button>
                     
                 </Card.Body>
             </Card>
             {
-                chosenMovie && <ModalMovie show={show} handleClose={handleClose} chosenMovie={chosenMovie} />
+                chosenMovie && <ModalMovie show={show} handleClose={handleClose} chosenMovie={chosenMovie} updateMovie={props.updateMovie}/>
             }
           
         </>
