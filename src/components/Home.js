@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import MovieList from './MovieList';
+import data from './data.json'
 
 export default function Home() {
-    const [movies, setTrending] = useState([]);
+    const [movies, setTrending] = useState(data);
 
 
     async function getTrending() {
@@ -14,9 +15,22 @@ export default function Home() {
         console.log("the trendings", trendingsData);
     }
 
+   function updateComment (newComment,id){
+let updateComment = movies.map(movie=>{
+if (movie.id===id) {
+    movie.personal_comment = newComment.commentUser
+    return movie}
+    else{
+        return movie
+    }
+})
+
+setTrending(updateComment)
+    }
+
 
     useEffect(() => {
-        getTrending();
+        // getTrending();
     }, [])
 
 
@@ -24,7 +38,7 @@ export default function Home() {
         <>
             
             {
-                (movies.length > 0) && <MovieList movies={movies} />
+                (movies.length > 0) && <MovieList movies={movies} updateComment={updateComment} />
             }
 
 
